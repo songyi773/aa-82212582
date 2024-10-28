@@ -6,7 +6,7 @@ resources:
 
 images:
 - name: ceappacr.azurecr.io/82212582
-  newTag: "202410280626"
+  newTag: "202410280648"
 
 configMapGenerator:
 - literals:
