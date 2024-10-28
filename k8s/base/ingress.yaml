@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: aa-82212582
 spec:
-  ingressClassName: nginx
+  ingressClassName: ingress-internal
   rules:
     - host: 82212582.ce-aa.kubepia.net
       http:
