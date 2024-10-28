@@ -20,10 +20,16 @@ spec:
           image: ceappacr.azurecr.io/82212582
           ports:
             - containerPort: 8080
+          volumeMounts:
+          - mountPath: /mnt/82212582
+            name: cloud-volume
           env:
           - name: SPRING_PROFILES_ACTIVE
             valueFrom:
               configMapKeyRef:
                 name: app-config
                 key: spring.profiles.active
-      
+      volumes:
+      - name: cloud-volume
+        persistentVolumeClaim:
+          claimName: cepg-aa-pvc
