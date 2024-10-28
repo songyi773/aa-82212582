@@ -20,4 +20,10 @@ spec:
           image: ceappacr.azurecr.io/82212582
           ports:
             - containerPort: 8080
+          env:
+          - name: SPRING_PROFILES_ACTIVE
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: spring.profiles.active
       
