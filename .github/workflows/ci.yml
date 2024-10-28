@@ -8,15 +8,10 @@
 
 name: Java CI with Maven
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: workflow_dispatch
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     env:
@@ -51,7 +46,7 @@ jobs:
 
     - name: Build&Tag Image
       run: |
-        docker build -t ${{ secrets.BASEACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} -f Dockerfile .
+        docker build -f Dockerfile -t ${{ secrets.BASEACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} .
         docker tag ${{ secrets.BASEACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} ${{ secrets.APPACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
 
     - name: CI/CD ACR Login
