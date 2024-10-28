@@ -4,9 +4,9 @@ spring:
       on-profile: prod
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: sa
-    password: sa
+    url: jdbc:postgresql://ce-aa-psql.postgres.database.azure.com:5432/postgres
+    username: ktds
+    password: Ktds!1234
   jpa:
     show-sql: true
     hibernate:
