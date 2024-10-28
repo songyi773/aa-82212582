@@ -18,8 +18,8 @@ spring:
         format_sql: true
   sql:
     init:
-      mode: always
-#      mode: embedded
+      # mode: always
+      mode: embedded
 server:
   port: 8080
 
