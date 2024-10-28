@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aa-82212582
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: 82212582.ce-aa.kubepia.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: aa-82212582
+                port:
+                  number: 8080
