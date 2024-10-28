@@ -20,5 +20,4 @@ spec:
           image: ceappacr.azurecr.io/82212582
           ports:
             - containerPort: 8080
-      restartPolicy: Always
       
